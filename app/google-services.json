@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "36750558702",
+    "project_id": "androidrecyclerview2-c81d2",
+    "storage_bucket": "androidrecyclerview2-c81d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36750558702:android:2e7fa7805b85d923253aff",
+        "android_client_info": {
+          "package_name": "com.example.addandfectchinfirebaserecyclerview2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoUwnnnvlgjvZUT0BU0ils3c7mKK0b5EE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
