@@ -43,7 +43,11 @@ public class MainActivity extends AppCompatActivity {
         price = findViewById(R.id.et_product_price);
         add = findViewById(R.id.btn_product_add);
         list = findViewById(R.id.btn_product_list);
+
         rvMain = findViewById(R.id.rv_main);
+        productAdapter = new ProductAdapter(productList);
+        rvMain.setAdapter(productAdapter);
+        rvMain.setLayoutManager(new LinearLayoutManager(this));
 
         //btn add functionality
         add.setOnClickListener(view -> toAdd());
@@ -77,10 +81,9 @@ public class MainActivity extends AppCompatActivity {
         firestore.collection("products").get().addOnCompleteListener(v->{
             if(v.isSuccessful()) {
                 for (QueryDocumentSnapshot document : v.getResult()) {
-                    productAdapter = new ProductAdapter(productList);
-                    rvMain.setAdapter(productAdapter);
-                    rvMain.setLayoutManager(new LinearLayoutManager(this));
-                }
+                    ProductModel product = document.toObject(ProductModel.class);
+                    productList.add(product);
+                }productAdapter.notifyDataSetChanged();
             }else{
                 Log.e("MAIN",v.getException().getMessage());
             }
